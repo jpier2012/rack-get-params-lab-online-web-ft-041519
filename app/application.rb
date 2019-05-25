@@ -19,7 +19,7 @@ class Application
     elsif req.path.match(/add/)
       @@items.each do |i|
          if !@@cart.include?(i)
-           @@cart << i 
+           @@cart << i
            resp.write("added #{i}")
          end
       end
