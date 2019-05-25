@@ -17,12 +17,10 @@ class Application
     elsif req.path.match(/cart/)
       @@cart.empty? ? resp.write("Your cart is empty") : @@cart.each { |i| resp.write("#{i}\n") }
     elsif req.path.match(/add/)
-      @@items.each do |i|
-         if !@@cart.include?(i)
-           @@cart << i
-           resp.write("added #{i}")
-         end
-      end
+      search_term = req.params["item"]
+      if @@items.include?(search_term)
+        @@cart << search_term
+      
     else
       resp.write("Path Not Found")
     end
