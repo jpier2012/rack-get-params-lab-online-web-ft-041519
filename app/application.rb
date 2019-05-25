@@ -17,7 +17,7 @@ class Application
     elsif req.path.match(/cart/)
        @@cart.empty? ? resp.write("Your cart is empty") : @@cart.each { |i| resp.write("#{i}\n") }
      elsif req.path.match(/add/)
-       
+
         elsif @@items.empty?
            resp.write("Your cart is empty")
         end
