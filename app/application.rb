@@ -21,9 +21,6 @@ class Application
          @@cart << i unless @@cart.include?(i)
          resp.write("added #{i}")
        end
-        elsif @@items.empty?
-           resp.write("Your cart is empty")
-        end
     else
       resp.write("Path Not Found")
     end
